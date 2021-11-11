@@ -5,6 +5,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.styles import PatternFill
 from src.utils import rgb2hex
 
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
@@ -19,9 +20,9 @@ if __name__ == "__main__":
     img = cv2.imread(args.image)
     h, w = img.shape[:2]
     print(f"=========== Input image size = ({h}, {w}) ===========")
-    h, w = int(h / args.reduce), int(w / args.reduce)
+    h, w = int(h / args.reduce), int(w / args.reduce) #27 48
     print(f"=========== Output size = ({h}, {w}) ===========")
-    img = cv2.resize(img, (h, h), interpolation=cv2.INTER_AREA)
+    img = cv2.resize(img, (w, h), interpolation=cv2.INTER_AREA) #48 27
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
     wb = Workbook() 
