@@ -9,12 +9,10 @@ from src.utils import rgb2hex
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-
     parser.add_argument('--video', type=str, help="path to the input image")
     parser.add_argument('--reduce', type=float, default=1, help="to reduce size =>(h/reduce, w/reduce)")
     parser.add_argument('--sheet', type=str, default="art", help="sheet name")
     parser.add_argument('--output', type=str, default="output.xlsx", help="output path with file name")
-    
     args = parser.parse_args()
 
     vidcap = cv2.VideoCapture(args.video)
